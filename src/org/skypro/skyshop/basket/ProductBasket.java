@@ -40,8 +40,19 @@ public class ProductBasket {
             for (int i = 0; i < size; i++) {
                 System.out.println(products[i]);
             }
+            System.out.println("Специальны товаров: " + specialCount());
             System.out.println("Итого: " + getTotalPrice());
         }
+    }
+
+    public int specialCount() {
+        int count = 0;
+        for (int i = 0; i < size; i++) {
+            if (products[i].isSpecial()) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public boolean findByName(String name){
